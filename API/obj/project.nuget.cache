@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TEzqc8oYcGrBuqJs0lsYzoj9fIUh2ypy2sKPOAShIeMWKVEoUIkot4fiAX3myLqbJlOr55j47kxfyjZK9kfrhQ==",
+  "dgSpecHash": "sKZEZ8J9+/IiZtA842mV8HdjnWhxsofYyKOX4PDeKZnHMMXiWveL3y77OYJxM4FlfrtrsZxWy3DGJ/gYJIf+VA==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Luis Ramirez\\myApps\\builds\\c#\\E-Commerce-C--TypeScript\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\Luis Ramirez\\myApps\\builds\\c#\\E-Commerce-C--TypeScript\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Luis Ramirez\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Luis Ramirez\\.nuget\\packages\\microsoft.data.sqlite.core\\6.0.3\\microsoft.data.sqlite.core.6.0.3.nupkg.sha512",
