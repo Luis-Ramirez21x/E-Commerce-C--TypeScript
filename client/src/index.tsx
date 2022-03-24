@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
+  /*react strict mode simply tells us if we are doing anything against reacts best practices */
   <React.StrictMode>
     <App />
   </React.StrictMode>,

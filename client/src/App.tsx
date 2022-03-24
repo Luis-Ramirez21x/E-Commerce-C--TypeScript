@@ -1,25 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+
+
 
 function App() {
+
+  const [products, setProducts] = useState([
+    {name:"mouse", price:14.99},
+    {name:"laptop", price:749.99}
+  ]);
+
+  useEffect(() =>{
+    fetch('http://localhost:5000/api/products')
+    .then(response => response.json())
+    .then( data => setProducts(data))
+  }, []);
+  //using an empty array as our second argument means that this useEffect will only be called once, other wise it will run everytime the component rerenders
+
+  function addProduct(){
+    setProducts([...products, {name: 'Mouse Pad', price: 9.99}])
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div>
+        <ul>
+          {products.map((item) =>(
+            <li key={item.name}>{item.name} + {item.price}</li>
+          ))}
+        </ul>
+        <button onClick={addProduct}>add item</button>
+      </div>
   );
 }
 
