@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Luis Ramirez\\myApps\\builds\\c#\\E-Commerce-C--TypeScript\\API\\API.csproj": {}
+    "C:\\Users\\Luis Ramirez\\myApps\\builds\\C#\\E-Commerce-C--TypeScript\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Luis Ramirez\\myApps\\builds\\c#\\E-Commerce-C--TypeScript\\API\\API.csproj": {
+    "C:\\Users\\Luis Ramirez\\myApps\\builds\\C#\\E-Commerce-C--TypeScript\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Luis Ramirez\\myApps\\builds\\c#\\E-Commerce-C--TypeScript\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\Luis Ramirez\\myApps\\builds\\C#\\E-Commerce-C--TypeScript\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\Luis Ramirez\\myApps\\builds\\c#\\E-Commerce-C--TypeScript\\API\\API.csproj",
+        "projectPath": "C:\\Users\\Luis Ramirez\\myApps\\builds\\C#\\E-Commerce-C--TypeScript\\API\\API.csproj",
         "packagesPath": "C:\\Users\\Luis Ramirez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Luis Ramirez\\myApps\\builds\\c#\\E-Commerce-C--TypeScript\\API\\obj\\",
+        "outputPath": "C:\\Users\\Luis Ramirez\\myApps\\builds\\C#\\E-Commerce-C--TypeScript\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Luis Ramirez\\AppData\\Roaming\\NuGet\\NuGet.Config"
