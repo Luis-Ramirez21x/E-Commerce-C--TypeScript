@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Product } from './product';
+import { Product } from '../models/product';
 
 
 
