@@ -1,7 +1,9 @@
+import { Container, CssBaseline, Typography } from '@mui/material';
 import React, { useState, useEffect } from 'react';
 import Catalog from '../../features/catalog/catalog';
 
 import { Product } from '../models/product';
+import Header from './header';
 
 
 
@@ -31,9 +33,13 @@ function App() {
   }
 
   return (
-      <div>
+      <>
+        <CssBaseline/>
+        <Header/>
+        <Container>
         <Catalog products = {products} addProduct={addProduct}/>
-      </div>
+        </Container>
+      </>
   );
 }
 
