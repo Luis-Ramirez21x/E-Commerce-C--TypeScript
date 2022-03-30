@@ -13,7 +13,7 @@ export default function productCard({product} : Props){
                 </Avatar>
                 }
                 title={product.name}
-                tittleTypographyProps={{
+                tittletypographyprops={{
                     sx:{fontWeight:'bold', color: 'secondary.main'}
                 }}
         />
