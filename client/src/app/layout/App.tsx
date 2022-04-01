@@ -17,8 +17,8 @@ import Header from './header';
 
 
 function App() {
-
-  const [darkMode, setDarkMode] = useState(false);
+ const [currentPage, setCurrentPage] = useState('catalog');
+ const [darkMode, setDarkMode] = useState(false);
  const paletteType = darkMode ? 'dark' : 'light';
   const theme = createTheme({
     palette:{
@@ -32,13 +32,14 @@ function App() {
 function handleThemeChange(){
     setDarkMode(!darkMode);
 }
- 
+
+
 
   return (
       <>
       <ThemeProvider theme={theme}>
       <CssBaseline/>
-      <Header darkMode= {darkMode} handleThemeChange={handleThemeChange}/>
+      <Header darkMode= {darkMode} handleThemeChange={handleThemeChange} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
         
           <Container>
           <Routes>

@@ -6,3 +6,11 @@ a{
 ul{
     display:flex
 }
+
+a:hover{
+   color:grey;
+}
+
+.active{
+    color:red;
+}

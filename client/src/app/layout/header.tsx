@@ -9,6 +9,9 @@ import './header.css'
 interface Props {
     darkMode: boolean;
     handleThemeChange: () => void;
+    currentPage: string;
+    setCurrentPage: (arg0: string) => void;
+
 }
 
 const midLinks =[
@@ -23,8 +26,9 @@ const rightLinks =[
 ]
 
 
-export default function Header({darkMode, handleThemeChange} : Props){
-
+export default function Header({darkMode, handleThemeChange, currentPage} : Props){
+    console.log(currentPage);
+    console.log(midLinks[0].tittle);
     return(
         <AppBar position= 'static' sx={{mb:4}}>
             <Toolbar>
@@ -34,7 +38,8 @@ export default function Header({darkMode, handleThemeChange} : Props){
                 <Switch checked = {darkMode} onChange={handleThemeChange}/>
                 <List>
                     {midLinks.map(({tittle, path}) => (
-                        <ListItem>
+                        
+                        <ListItem className={currentPage == tittle.toString() ? 'active' : 'not-active'}>
                             <NavLink to={path}>
                             {tittle.toUpperCase()}
                             </NavLink>
