@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using API.Data;
 using API.Entities;
@@ -8,13 +7,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    //gives us api 'powers'
-    [ApiController]
-    //we are defining our route api/products
-    [Route("api/[controller]")]
+
     //the [controller] piece will literally take the name from the class name
     //so if you chnage the class name below the route url changes
-    public class ProductsController : ControllerBase
+    public class ProductsController : BaseApiController
     {
         private readonly StoreContext _context;
 
