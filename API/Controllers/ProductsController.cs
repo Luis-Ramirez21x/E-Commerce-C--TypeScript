@@ -34,7 +34,11 @@ namespace API.Controllers
             
             //instead of irriterating i could have used .find(id)
             //var product = products.First(item => item.id == id);
-           return await _context.Products.FindAsync(id);
+           var product = await _context.Products.FindAsync(id);
+
+           if (product == null) return NotFound();
+
+           return product;
         }
     }
 }

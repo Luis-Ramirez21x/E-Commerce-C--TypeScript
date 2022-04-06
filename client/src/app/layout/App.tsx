@@ -7,6 +7,8 @@ import { Container,
 import { createTheme } from '@mui/material/styles';
 import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import AboutPage from '../../features/about/aboutPage';
 
 import Catalog from '../../features/catalog/catalog';
@@ -38,6 +40,7 @@ function handleThemeChange(){
   return (
       <>
       <ThemeProvider theme={theme}>
+      <ToastContainer position='bottom-right' hideProgressBar theme='colored' />
       <CssBaseline/>
       <Header darkMode= {darkMode} handleThemeChange={handleThemeChange} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
         
