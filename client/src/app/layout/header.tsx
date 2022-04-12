@@ -1,9 +1,12 @@
 
 
+
 import { ShoppingCart } from "@mui/icons-material";
 import { AppBar, Badge, Box, IconButton, List, ListItem, Switch, Toolbar, Typography } from "@mui/material";
 import { Link, NavLink } from "react-router-dom";
 import './header.css'
+
+
 
 
 interface Props {
@@ -40,7 +43,7 @@ export default function Header({darkMode, handleThemeChange, currentPage} : Prop
                 <List>
                     {midLinks.map(({tittle, path}) => (
                         
-                        <ListItem className={currentPage == tittle.toString() ? 'active' : 'not-active'}>
+                        <ListItem key={tittle} className={currentPage == tittle.toString() ? 'active' : 'not-active'}>
                             <NavLink to={path}>
                             {tittle.toUpperCase()}
                             </NavLink>
@@ -55,7 +58,7 @@ export default function Header({darkMode, handleThemeChange, currentPage} : Prop
                     </IconButton>
                     <List>
                         {rightLinks.map(({tittle, path}) => (
-                            <ListItem>
+                            <ListItem key={tittle}>
                                 <NavLink to={path}>
                                 {tittle.toUpperCase()}
                                 </NavLink>

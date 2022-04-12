@@ -3,14 +3,23 @@ import ReactDOM from 'react-dom';
 import './app/layout/styles.css';
 import App from './app/layout/App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
+
+
+import { unstable_HistoryRouter as HistoryRouter } from "react-router-dom";
+import { createBrowserHistory } from "history";
+
+export const history =  createBrowserHistory();
+
+
+
 
 ReactDOM.render(
+  
   /*react strict mode simply tells us if we are doing anything against reacts best practices */
   <React.StrictMode>
-    <BrowserRouter>
+    <HistoryRouter history={history}>
     <App />
-    </BrowserRouter>
+    </HistoryRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

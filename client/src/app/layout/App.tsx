@@ -1,10 +1,5 @@
 
-import { Container, 
-  CssBaseline, 
-  Switch, 
-  ThemeProvider, 
-  Typography } from '@mui/material';
-import { createTheme } from '@mui/material/styles';
+
 import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -16,6 +11,9 @@ import ProductDetails from '../../features/catalog/productDetails';
 import ContactPage from '../../features/contact/contactPage';
 import HomePage from '../../features/home/homePage';
 import Header from './header';
+import ServerError from '../errors/serverError';
+import { ThemeProvider } from '@emotion/react';
+import { createTheme, CssBaseline, Container } from '@mui/material';
 
 
 function App() {
@@ -51,6 +49,7 @@ function handleThemeChange(){
           <Route path='/catalog/:id'element= {<ProductDetails/>}/>
           <Route path='/about'element= {<AboutPage/>}/>
           <Route path='/contact'element= {<ContactPage/>}/>
+          <Route path='/serverError'element= {<ServerError/>}/>
           </Routes>
           </Container>
         
