@@ -6,7 +6,7 @@ export default function ServerError() {
     const navigate = useNavigate();
     const { state } : any = useLocation();
 
-    console.log(state);
+   
     
 
     return (

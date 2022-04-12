@@ -14,6 +14,7 @@ import Header from './header';
 import ServerError from '../errors/serverError';
 import { ThemeProvider } from '@emotion/react';
 import { createTheme, CssBaseline, Container } from '@mui/material';
+import NotFound from '../errors/notFound';
 
 
 function App() {
@@ -42,7 +43,7 @@ function handleThemeChange(){
       <CssBaseline/>
       <Header darkMode= {darkMode} handleThemeChange={handleThemeChange} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
         
-          <Container>
+      <Container>
           <Routes>
           <Route path='/'element= {<HomePage/>}/>
           <Route path='/catalog'element= {<Catalog/>}/>
@@ -50,8 +51,9 @@ function handleThemeChange(){
           <Route path='/about'element= {<AboutPage/>}/>
           <Route path='/contact'element= {<ContactPage/>}/>
           <Route path='/serverError'element= {<ServerError/>}/>
+          <Route path='*'element= {<NotFound/>}/>
           </Routes>
-          </Container>
+      </Container>
         
       </ThemeProvider>
       </>
