@@ -5,6 +5,7 @@ import { Product } from "../../app/models/product";
 import ProductList from "./ProductList";
 import agent from '../../app/api/agent'
 import axios from "axios";
+import LoadingComponent from "../../app/layout/loadingComponent";
 
 
 
@@ -23,6 +24,7 @@ export default function Catalog(){
     }, [])
     //using an empty array as our second argument means that this useEffect will only be called once, other wise it will run everytime the component rerenders
   
+    if (loading) return <LoadingComponent message='Loading products...' />
 
     
 return(

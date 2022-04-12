@@ -6,14 +6,14 @@ import { useNavigate } from 'react-router-dom';
 import { history } from "../..";
 
 
-//const navigate = useNavigate();
+const sleep = () => new Promise(resolve => setTimeout(resolve, 500));
 
 axios.defaults.baseURL = 'http://localhost:5000/api/';
 
 const responseBody = <T>(response: AxiosResponse<T>) => response.data;
 
 axios.interceptors.response.use(async response => {
-    //await sleep();
+    await sleep();
     return response;
 }, (error: AxiosError) => {
     const { data, status } = error.response!;
