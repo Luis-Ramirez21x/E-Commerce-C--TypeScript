@@ -15,6 +15,8 @@ import ServerError from '../errors/serverError';
 import { ThemeProvider } from '@emotion/react';
 import { createTheme, CssBaseline, Container } from '@mui/material';
 import NotFound from '../errors/notFound';
+import BasketPage from '../../features/basket/basketPage';
+
 
 
 function App() {
@@ -51,6 +53,7 @@ function handleThemeChange(){
           <Route path='/about'element= {<AboutPage/>}/>
           <Route path='/contact'element= {<ContactPage/>}/>
           <Route path='/serverError'element= {<ServerError/>}/>
+          <Route path='/basket' element={<BasketPage/>} />
           <Route path='*'element= {<NotFound/>}/>
           </Routes>
       </Container>
