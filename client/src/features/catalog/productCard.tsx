@@ -2,6 +2,7 @@ import { LoadingButton } from "@mui/lab";
 import { Avatar, Button, Card, CardActions, CardContent, CardHeader, CardMedia, Link, ListItem, ListItemAvatar, ListItemText, Typography } from "@mui/material";
 import { useState } from "react";
 import agent from "../../app/api/agent";
+import { useStoreContext } from "../../app/context/StoreContext";
 import { Product } from "../../app/models/product";
 interface Props{
     product: Product;
@@ -9,10 +10,12 @@ interface Props{
 
 export default function productCard({product} : Props){
     const [loading, setLoading] = useState(false);
+    const {setBasket} = useStoreContext();
+
     function handleAddItem(productId: number) {
       setLoading(true);
       agent.Basket.addItem(productId)
-          //.then(basket => setBasket(basket))
+          .then(basket => setBasket(basket.data))
           .catch(error => console.log(error))
           .finally(() => setLoading(false));
   }

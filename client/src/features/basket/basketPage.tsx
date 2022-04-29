@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import agent from "../../app/api/agent";
 import { useStoreContext } from "../../app/context/StoreContext";
-import BasketSummary from "./BasketSummary";
+//import BasketSummary from "./BasketSummary";
 
 export default function BasketPage() {
     const { basket, setBasket, removeItem } = useStoreContext();
@@ -18,7 +18,7 @@ export default function BasketPage() {
     function handleAddItem(productId: number, name: string) {
         setStatus({ loading: true, name });
         agent.Basket.addItem(productId)
-            .then(basket => setBasket(basket))
+            //.then(basket => setBasket(basket))
             .catch(error => console.log(error))
             .finally(() => setStatus({ loading: false, name: '' }))
     }
@@ -94,7 +94,7 @@ export default function BasketPage() {
             <Grid container>
                 <Grid item xs={6} />
                 <Grid item xs={6}>
-                    <BasketSummary />
+                    
                     <Button
                         component={Link}
                         to='/checkout'

@@ -3,7 +3,7 @@ import { Basket } from "../models/basket";
 
 interface StoreContextValue {
     basket: Basket | null;
-    setBasket: (basket: Basket) => void;
+    setBasket: (basket: Basket ) => void;
     removeItem: (productId: number, quantity: number) => void;
 }
 
@@ -20,7 +20,7 @@ export function useStoreContext() {
 }
 
 export function StoreProvider({children}: PropsWithChildren<any>) {
-    const [basket, setBasket] = useState<Basket | null>(null);
+    const [basket, setBasket] = useState<Basket | null >(null);
 
     function removeItem(productId: number, quantity: number) {
         if (!basket) return;
