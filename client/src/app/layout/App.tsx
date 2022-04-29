@@ -1,6 +1,6 @@
 
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -16,10 +16,33 @@ import { ThemeProvider } from '@emotion/react';
 import { createTheme, CssBaseline, Container } from '@mui/material';
 import NotFound from '../errors/notFound';
 import BasketPage from '../../features/basket/basketPage';
+import { useStoreContext } from '../context/StoreContext';
+import agent from '../api/agent';
+import { getCookie } from '../Util/util';
+import LoadingComponent from './loadingComponent';
 
 
 
 function App() {
+  //global state
+  const {setBasket} = useStoreContext();
+  //local state
+  const [loading, setLoading] = useState(true);
+
+  //fetching cookie
+  useEffect(() => {
+    const buyerId = getCookie('buyerId');
+    if (buyerId) {
+      agent.Basket.get()
+        .then(basket => setBasket(basket))
+        .catch(error => console.log(error))
+        .finally(() => setLoading(false))
+    } else {
+      setLoading(false);
+    }
+  }, [setBasket])
+
+
  const [currentPage, setCurrentPage] = useState('catalog');
  const [darkMode, setDarkMode] = useState(false);
  const paletteType = darkMode ? 'dark' : 'light';
@@ -37,6 +60,8 @@ function handleThemeChange(){
 }
 
 
+
+if (loading) return <LoadingComponent message='Initialising app...' />
 
   return (
       <>
