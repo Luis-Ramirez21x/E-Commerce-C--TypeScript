@@ -20,6 +20,8 @@ import { useStoreContext } from '../context/StoreContext';
 import agent from '../api/agent';
 import { getCookie } from '../Util/util';
 import LoadingComponent from './loadingComponent';
+import { Basket } from '../models/basket';
+import axios from 'axios';
 
 
 

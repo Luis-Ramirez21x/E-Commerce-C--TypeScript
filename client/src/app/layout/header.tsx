@@ -68,7 +68,7 @@ export default function Header({darkMode, handleThemeChange, currentPage} : Prop
                 </List>
                 <Box display='flex' alignItems='center'>
                     <IconButton component={Link} to='/basket' size="large" sx={{color:'inherit'}}>
-                    <Badge badgeContent={4} color="primary">
+                    <Badge badgeContent={itemCount} color="primary">
                         <ShoppingCart/>
                     </Badge>
                     </IconButton>

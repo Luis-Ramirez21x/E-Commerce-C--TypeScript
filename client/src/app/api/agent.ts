@@ -11,7 +11,7 @@ const sleep = () => new Promise(resolve => setTimeout(resolve, 500));
 axios.defaults.baseURL = 'http://localhost:5000/api/';
 axios.defaults.withCredentials = true;
 
-const responseBody = <T>(response: AxiosResponse<T>) => response.data;
+const responseBody = (response: AxiosResponse ) => response.data;
 
 axios.interceptors.response.use(async response => {
     await sleep();

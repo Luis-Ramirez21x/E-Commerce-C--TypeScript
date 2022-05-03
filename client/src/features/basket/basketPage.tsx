@@ -18,7 +18,7 @@ export default function BasketPage() {
     function handleAddItem(productId: number, name: string) {
         setStatus({ loading: true, name });
         agent.Basket.addItem(productId)
-            //.then(basket => setBasket(basket))
+            .then(basket => setBasket(basket.data))
             .catch(error => console.log(error))
             .finally(() => setStatus({ loading: false, name: '' }))
     }
