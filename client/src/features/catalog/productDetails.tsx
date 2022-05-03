@@ -9,17 +9,27 @@ import { Product } from "../../app/models/product";
 
 
 export default function ProductDetails(){
+    const {basket, setBasket, removeItem} = useStoreContext();
     const {id} = useParams<{id: string}>();
-    const [product,setProduct] = useState<Product | null>(null);
-    const [loading, setLoading] =useState(true);
+    const [product, setProduct] = useState<Product | null>(null);
+    const [loading, setLoading] = useState(true);
+    const [quantity, setQuantity] = useState(0);
+    const [submitting, setSubmitting] = useState(false);
+    const item = basket?.items.find(i => i.productId === product?.id);
 
     useEffect(() => {
-        agent.Catalog.details(parseInt(id!))
+        if (item) setQuantity(item.quantity);
+        agent.Catalog.details(parseInt(id))
             .then(response => setProduct(response))
-            .catch(error => console.log(error.response))
+            .catch(error => console.log(error))
             .finally(() => setLoading(false))
-            .finally 
-    }, [id]);
+    }, [id, item]);
+
+    function handleInputChange(event: any) {
+        if (event.target.value > 0) {
+            setQuantity(parseInt(event.target.value));
+        }
+    }
 
     if (loading) return <LoadingComponent message='Loading product...' />
 

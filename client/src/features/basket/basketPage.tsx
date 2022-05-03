@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import agent from "../../app/api/agent";
 import { useStoreContext } from "../../app/context/StoreContext";
-//import BasketSummary from "./BasketSummary";
+import BasketSummary from "./basketSummary";
 
 export default function BasketPage() {
     const { basket, setBasket, removeItem } = useStoreContext();
@@ -47,7 +47,7 @@ export default function BasketPage() {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {basket.items.map((item: any) => (
+                        {basket.items.map(item => (
                             <TableRow
                                 key={item.productId}
                                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -94,7 +94,7 @@ export default function BasketPage() {
             <Grid container>
                 <Grid item xs={6} />
                 <Grid item xs={6}>
-                    
+                    <BasketSummary />
                     <Button
                         component={Link}
                         to='/checkout'
